@@ -1,0 +1,103 @@
+import React from 'react';
+import {
+    Redirect,
+    Link,
+
+} from "react-router-dom";
+
+import {
+    Typography,
+
+    Card,
+    CardContent,
+    TextField,
+    Button,
+} from "@material-ui/core"
+
+
+export default class Comp1 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            loggedin: false
+        }
+    }
+
+    handleEmail = (e) => {
+        this.setState({
+            email: e.target.value
+        })
+
+    }
+
+    handlePassword = (e) => {
+        this.setState({
+            password: e.target.value
+        })
+
+    }
+    handleLogin = () => {
+        if (this.state.email == "manu@gmail.com" && this.state.password == "abcd") {
+            this.setState({
+                loggedin: true
+            })
+        }
+    }
+
+
+
+    render() {
+        if (this.state.loggedin === true) {
+            return <Redirect to="/three" />
+        }
+        return (
+            <div>
+                <Card style={{ width: 300, margin: "auto", marginTop: 50 }}>
+                    <CardContent>
+                        <Typography>
+                            Login
+                        </Typography>
+
+                        <TextField
+                            variant="outlined"
+                            margin="dense"
+                            label="email"
+                            value={this.state.email}
+                            onChange={
+                                this.handleEmail
+                            }
+                            fullWidth
+
+
+                        />
+
+                        <TextField
+                            variant="outlined"
+                            margin="dense"
+                            label="password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={
+                                this.handlePassword
+                            }
+                            fullWidth
+
+                        />
+                        <Button variant="contained" color="secondary"
+                            fullWidth
+                            onChange={this.handleLogin}
+                            >
+                              Login
+                            </Button>
+
+                    </CardContent>
+
+                </Card>
+            </div>
+
+
+        )
+    }
+}

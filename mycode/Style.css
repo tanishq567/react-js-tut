@@ -1,0 +1,38 @@
+.controlId{
+    
+    justify-content: center;
+      background-color: chocolate;
+      width: 300px;
+      border: 2px solid green;
+      border-radius: 12px;
+      padding: 2px;
+      margin: auto;
+      color:#191970;
+    
+    
+    
+}
+.secondary{
+    text-align:"auto";
+    align-items: 'center'
+    
+}
+
+.container{
+    height: 500px;
+    background-color: gray;
+    display: flex;
+    justify-content: 'center';
+    align-items: 'center';
+    
+}
+
+.primary{
+    border-radius: 12px;
+    background-color:yellow;
+    border: 4px;
+}
+.completed{
+    text-align:right;
+}
+
